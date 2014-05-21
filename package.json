@@ -1,0 +1,11 @@
+{
+  "name": "PixelJS",
+  "description": "Pixels",
+  "version": "2.0.1",
+  "dependencies": {
+    "ejs": "^1.0.0",
+    "express": "*",
+    "socket.io": "*",
+    "underscore": "^1.6.0"
+  }
+}

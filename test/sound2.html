@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<!--[if IE 9]><html class="lt-ie10" lang="en" > <![endif]-->
+<html class="no-js" lang="en" >
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Pixel tester page</title>
+
+	<link rel="stylesheet" href="css/normalize.css">
+	<link rel="stylesheet" href="css/foundation.css">
+
+	<!-- If you are using the gem version, you need this only -->
+	<link rel="stylesheet" href="css/app.css">
+
+	<script src="js/vendor/modernizr.js"></script>
+
+</head>
+<body>
+
+	<script src="js/vendor/jquery.js"></script>
+	<script src="js/foundation.min.js"></script>
+	<script src="/socket.io/socket.io.js"></script>
+	<script>
+		//$(document).foundation();
+		var socket;
+		var establish_socket = function(){
+			socket = io.connect('http://localhost:1337');		
+		}
+		var update = function(x, y, color){
+			socket.emit("setByCoords", {x:x, y:y, color:color});
+		}
+		$(function(){
+			establish_socket();
+			update(2,2,"green");
+		});
+
+	</script>
+</body>
+</html>
