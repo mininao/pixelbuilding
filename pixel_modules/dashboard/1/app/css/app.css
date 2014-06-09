@@ -5184,6 +5184,10 @@ th.hide-for-touch {
 body {
   border-top: 3px solid #1ABC9C;
   background-color: #e5e5e5; }
+  body a {
+    color: #1ABC9C; }
+  body a:hover, body a:visited {
+    color: #48C9B0; }
 
 body > aside {
   height: 100%;
@@ -5241,6 +5245,13 @@ div#main {
     min-height: 200px;
     padding-left: 10rem;
     padding: 5rem 10rem; }
+    div#main .jumbotron h1 {
+      font-weight: 900;
+      font-size: 3rem; }
+    div#main .jumbotron h2 {
+      font-weight: 400;
+      font-style: italic;
+      font-size: 2rem; }
   div#main .flexwrap {
     padding-left: 5.6rem;
     width: 100%;
