@@ -74,6 +74,7 @@ body > aside {
         font-size: 1rem;
         text-transform: uppercase;
         transition: color 0.25s linear 0s, background-color 0.25s linear 0s, box-shadow 0.25s linear 0s;
+        cursor: pointer;
         i {
             margin-bottom: 0.6rem;
             font-size: 2rem;
@@ -84,39 +85,26 @@ body > aside {
     }
     .side_item:hover {
         color: $primary;
-        border-left: 3px solid $primary;
         text-shadow: 0 0 0.35px $primary;
-        margin-left: -3px;
         -webkit-box-sizing: content-box;
         -moz-box-sizing: content-box;
         box-sizing: content-box;
         background-color: $inverse-lighter;
         -webkit-box-shadow: inset 0 0 5px rgba(52, 73, 94, 0.88);
-        box-shadow: inset 0 0 5px rgba(52, 73, 94, 0.88);        
+        box-shadow: inset 0 0 5px rgba(52, 73, 94, 0.88);
     }
-    .side_item:hover::after {
-        width: 4px;
-        height: 4.4rem;
-        position: absolute;
-        /*margin-top: -3.9rem;
-        margin-left: 2.5em;*/
-        background-color: $primary;
-        content: "";
-    }    
     .side_item.active {
         color: $primary;
         text-shadow: 0 0 0.35px $primary;
         background-color: $inverse-lighter;
         -webkit-box-shadow: inset 0 0 5px rgba(52, 73, 94, 0.88);
         box-shadow: inset 0 0 5px rgba(52, 73, 94, 0.88);
-        /*border-top: 1px solid #1f303b;
-        border-bottom: 1px solid #1f303b;*/
     }
     .side_item.active::after {
         width: 4px;
-        height: 4.4rem;
+        height: 4.33rem;
         position: absolute;
-        margin-top: -3.9rem;
+        margin-top: -3.94rem;
         margin-left: 2.5em;
         background-color: $primary;
         content: "";
@@ -127,5 +115,27 @@ body > aside {
 }
 
 div#main {
-    margin-left: 5.5rem;
+    //margin-left: 5.6rem;   
+    width: 100%;
+    max-width: none;
+    .jumbotron {
+        background: url('../images/soporific_m.jpg');
+        min-height: 200px;
+        padding-left: 10rem;
+        //margin-top: -3px;
+        padding: 5rem 10rem;
+    }    
+    .flexwrap {
+        padding-left: 5.6rem;
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        .box {
+            border: 1px solid black;
+            padding: 20px 30px;
+            max-width: 50rem;
+            margin: 20px 20px;
+        }        
+    }
 }

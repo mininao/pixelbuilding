@@ -5200,7 +5200,8 @@ body > aside {
     font-weight: 300;
     font-size: 1rem;
     text-transform: uppercase;
-    transition: color 0.25s linear 0s, background-color 0.25s linear 0s, box-shadow 0.25s linear 0s; }
+    transition: color 0.25s linear 0s, background-color 0.25s linear 0s, box-shadow 0.25s linear 0s;
+    cursor: pointer; }
     body > aside .side_item i {
       margin-bottom: 0.6rem;
       font-size: 2rem;
@@ -5208,36 +5209,24 @@ body > aside {
       text-shadow: none; }
   body > aside .side_item:hover {
     color: #1ABC9C;
-    border-left: 3px solid #1ABC9C;
     text-shadow: 0 0 0.35px #1ABC9C;
-    margin-left: -3px;
     -webkit-box-sizing: content-box;
     -moz-box-sizing: content-box;
     box-sizing: content-box;
     background-color: #415B76;
     -webkit-box-shadow: inset 0 0 5px rgba(52, 73, 94, 0.88);
     box-shadow: inset 0 0 5px rgba(52, 73, 94, 0.88); }
-  body > aside .side_item:hover::after {
-    width: 4px;
-    height: 4.4rem;
-    position: absolute;
-    /*margin-top: -3.9rem;
-        margin-left: 2.5em;*/
-    background-color: #1ABC9C;
-    content: ""; }
   body > aside .side_item.active {
     color: #1ABC9C;
     text-shadow: 0 0 0.35px #1ABC9C;
     background-color: #415B76;
     -webkit-box-shadow: inset 0 0 5px rgba(52, 73, 94, 0.88);
-    box-shadow: inset 0 0 5px rgba(52, 73, 94, 0.88);
-    /*border-top: 1px solid #1f303b;
-        border-bottom: 1px solid #1f303b;*/ }
+    box-shadow: inset 0 0 5px rgba(52, 73, 94, 0.88); }
   body > aside .side_item.active::after {
     width: 4px;
-    height: 4.4rem;
+    height: 4.33rem;
     position: absolute;
-    margin-top: -3.9rem;
+    margin-top: -3.94rem;
     margin-left: 2.5em;
     background-color: #1ABC9C;
     content: ""; }
@@ -5245,4 +5234,21 @@ body > aside {
     color: #48C9B0; }
 
 div#main {
-  margin-left: 5.5rem; }
+  width: 100%;
+  max-width: none; }
+  div#main .jumbotron {
+    background: url('../images/soporific_m.jpg');
+    min-height: 200px;
+    padding-left: 10rem;
+    padding: 5rem 10rem; }
+  div#main .flexwrap {
+    padding-left: 5.6rem;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around; }
+    div#main .flexwrap .box {
+      border: 1px solid black;
+      padding: 20px 30px;
+      max-width: 50rem;
+      margin: 20px 20px; }
