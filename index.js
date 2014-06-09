@@ -26,6 +26,10 @@ http_api.init(app, core);
 var client = require('./pixel_modules/client.js');
 client.init(app, core, io);
 
+/* 3. Module : socket_api */
+var socket_api = require('./pixel_modules/socket_api.js');
+socket_api.init(app, core, io);
+
 /* 5. Tests */
 
 app.use('/pixel/test', express.static(__dirname + '/test'));
@@ -34,7 +38,7 @@ app.route('/pixel/ping').all(function(req, res, next) {
   res.send('pong');
 }); 
 
-/* 4. Logging*/
+/* 6. Logging*/
 
 core.ee.on('update', function(currentScreen){
 	console.log('update, id:' + currentScreen.id);
@@ -43,5 +47,5 @@ core.ee.on('reset', function(){
 	console.log('reset');
 });
 
-/* 5. WIP Stuff */
+/* 7. WIP Stuff */
 

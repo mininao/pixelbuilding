@@ -17,12 +17,17 @@
 
 </head>
 <body>
-
+	<div class="row form">
+		<input type="number" placeholder="coordX" id="coordX">
+		<input type="number" placeholder="coordY" id="coordY">
+		<input type="text" placeholder="color" id="color">
+		<a href="#" class="button" id="update">Update</a>
+	</div>
 	<script src="js/vendor/jquery.js"></script>
 	<script src="js/foundation.min.js"></script>
 	<script src="/socket.io/socket.io.js"></script>
 	<script>
-		//$(document).foundation();
+		$(document).foundation();
 		var socket;
 		var establish_socket = function(){
 			socket = io.connect('http://localhost:1337');		
@@ -33,9 +38,10 @@
 		}
 		$(function(){
 			establish_socket();
-			update(2,2,"green");
 		});
-
+		$("#update").click(function(){
+			update($("#coordX").val(), $("#coordY").val(), $("#color").val())
+		})
 	</script>
 </body>
 </html>

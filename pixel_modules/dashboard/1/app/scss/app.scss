@@ -1,0 +1,131 @@
+@import "normalize";
+@import "settings";
+$body-font-family: "Lato", sans-serif;
+// Make sure the charset is set appropriately
+@charset "UTF-8";
+
+// Behold, here are all the Foundation components.
+@import
+  "foundation/components/grid",
+  "foundation/components/accordion",
+  "foundation/components/alert-boxes",
+  "foundation/components/block-grid",
+  "foundation/components/breadcrumbs",
+  "foundation/components/button-groups",
+  "foundation/components/buttons",
+  "foundation/components/clearing",
+  "foundation/components/dropdown",
+  "foundation/components/dropdown-buttons",
+  "foundation/components/flex-video",
+  "foundation/components/forms",
+  "foundation/components/inline-lists",
+  "foundation/components/joyride",
+  "foundation/components/keystrokes",
+  "foundation/components/labels",
+  "foundation/components/magellan",
+  "foundation/components/orbit",
+  "foundation/components/pagination",
+  "foundation/components/panels",
+  "foundation/components/pricing-tables",
+  "foundation/components/progress-bars",
+  "foundation/components/range-slider",
+  "foundation/components/reveal",
+  "foundation/components/side-nav",
+  "foundation/components/split-buttons",
+  "foundation/components/sub-nav",
+  "foundation/components/switch",
+  "foundation/components/tables",
+  "foundation/components/tabs",
+  "foundation/components/thumbs",
+  "foundation/components/tooltips",
+  "foundation/components/top-bar",
+  "foundation/components/type",
+  "foundation/components/offcanvas",
+  "foundation/components/visibility";
+
+  @import "appstyles";
+//base colors
+$primary: #1ABC9C;
+$primary-lighter: #48C9B0;
+
+$inverse: #34495E;
+$inverse-lighter: #415B76;
+$inverse-even-lighter: #4d719b;
+//other colors
+$page-bg: #e5e5e5;
+body {
+    border-top: 3px solid $primary;
+    background-color: $page-bg;
+}
+
+body > aside {
+    height: 100%;
+    width: 5rem;
+    position: fixed;
+    top: 3px;
+    background-color: $inverse;
+    .side_item {
+        padding: 5px 0 6.5px 0;
+        margin: 20px 0;
+        text-align: center;
+        color: #fff;
+        text-shadow: 0 0 0.35px #fff;
+        font-weight: 300;
+        font-size: 1rem;
+        text-transform: uppercase;
+        transition: color 0.25s linear 0s, background-color 0.25s linear 0s, box-shadow 0.25s linear 0s;
+        i {
+            margin-bottom: 0.6rem;
+            font-size: 2rem;
+            line-height: 1;
+            text-shadow: none;
+        }
+        
+    }
+    .side_item:hover {
+        color: $primary;
+        border-left: 3px solid $primary;
+        text-shadow: 0 0 0.35px $primary;
+        margin-left: -3px;
+        -webkit-box-sizing: content-box;
+        -moz-box-sizing: content-box;
+        box-sizing: content-box;
+        background-color: $inverse-lighter;
+        -webkit-box-shadow: inset 0 0 5px rgba(52, 73, 94, 0.88);
+        box-shadow: inset 0 0 5px rgba(52, 73, 94, 0.88);        
+    }
+    .side_item:hover::after {
+        width: 4px;
+        height: 4.4rem;
+        position: absolute;
+        /*margin-top: -3.9rem;
+        margin-left: 2.5em;*/
+        background-color: $primary;
+        content: "";
+    }    
+    .side_item.active {
+        color: $primary;
+        text-shadow: 0 0 0.35px $primary;
+        background-color: $inverse-lighter;
+        -webkit-box-shadow: inset 0 0 5px rgba(52, 73, 94, 0.88);
+        box-shadow: inset 0 0 5px rgba(52, 73, 94, 0.88);
+        /*border-top: 1px solid #1f303b;
+        border-bottom: 1px solid #1f303b;*/
+    }
+    .side_item.active::after {
+        width: 4px;
+        height: 4.4rem;
+        position: absolute;
+        margin-top: -3.9rem;
+        margin-left: 2.5em;
+        background-color: $primary;
+        content: "";
+    }
+    .side_item.active:hover {
+        color: $primary-lighter;       
+    }    
+}
+
+div#main {
+    margin-left: 5.5rem;
+}

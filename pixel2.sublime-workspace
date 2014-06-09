@@ -4,6 +4,10 @@
 		"selected_items":
 		[
 			[
+				"socket",
+				"socket_api"
+			],
+			[
 				"http",
 				"http_api"
 			],
@@ -131,7 +135,7 @@
 			"file": "index.js",
 			"settings":
 			{
-				"buffer_size": 975,
+				"buffer_size": 1096,
 				"line_ending": "Unix"
 			}
 		},
@@ -147,7 +151,7 @@
 			"file": "test/sound2.html",
 			"settings":
 			{
-				"buffer_size": 1003,
+				"buffer_size": 1015,
 				"line_ending": "Unix"
 			}
 		},
@@ -160,10 +164,21 @@
 			}
 		},
 		{
-			"file": "pixel_modules/core.js",
+			"file": "test/modif.html",
 			"settings":
 			{
-				"buffer_size": 2390,
+				"buffer_size": 1345,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"contents": "/*\nPixelJS 2 Module - Core functions\nPixel storage, update events, get/set, register\nby mininao\nhttp://maxenceaici.fr\n*/\nvar _ = require(\"underscore\");\nvar EventEmitter = require('events').EventEmitter;\n\nvar screens = new Array();\n\n\n/**** REGISTER, GET, SET ******/\nvar register = function(x, y, name, color) {\n	x=parseInt(x);\n	y=parseInt(y);	\n	var newScreen = {\n	    x		: x,\n	    y		: y,\n	    name	: name,\n	    color	: color,\n	    id		: _.uniqueId('screen_')\n  	};\n  	_.defaults(newScreen, {name: \"A screen\", color: \"red\", x: 0, y: 0});\n  	screens.push(newScreen);\n  	ee.emit('update',newScreen);\n  	return newScreen;\n}\nexports.register = register;\n\nvar all = function() {\n	return screens;\n}\nexports.all = all;\n\nvar reset = function() {\n	screens.length = 0;\n	ee.emit('reset');\n	return screens;\n}\nexports.reset = reset;\n\n/* Getters */\nvar get = function(id) {\n  	return _.findWhere(screens, {id: id});\n}\nexports.get = get;\n\nvar getByCoords = function(x, y) {\n	x=parseInt(x);\n	y=parseInt(y);\n	var selectedScreens = _.where(screens, {x:x, y:y});\n	return selectedScreens;\n}\nexports.getByCoords = getByCoords;\n/* End of getters */\n\n/* Setters */\nvar set = function(id, Qx, Qy, name, color) {\n	x=parseInt(Qx);\n	y=parseInt(Qy);	\n	var currentScreen = _.findWhere(screens, {id: id});\n	if ( _.isUndefined(currentScreen) ) {\n        return; // Check if screen exists\n    } else {\n    	if (! _.isUndefined(Qx)) 	{currentScreen.x = x;}\n    	if (! _.isUndefined(Qy)) 	{currentScreen.y = y;}\n    *	if (! _.isUndefined(name)) 	{currentScreen.name = name;}\n    	if (! _.isUndefined(color)) {currentScreen.color = color;}\n		\n		ee.emit('update',currentScreen);\n		return currentScreen;\n  	}\n}\nexports.set = set;\n\nvar setByCoords = function(x, y, name, color) {\n	x=parseInt(x);\n	y=parseInt(y);	\n	var selectedScreens = _.where(screens, {x:x, y:y});\n	if ( _.isEmpty(selectedScreens) ) {\n		console.log(\"setByCoords : Coords not found\");\n        return; // Check if screen exists\n    } else {\n    	_.each(selectedScreens, function(currentScreen){\n	    	if (! _.isUndefined(name)) 	{currentScreen.name = name;}\n	    	if (! _.isUndefined(color)) {currentScreen.color = color;}\n			ee.emit('update',currentScreen);\n    	});\n    }\n		return selectedScreens;\n}\nexports.setByCoords = setByCoords;\n/* End of Setters */\n\n/****** UPDATES & EVENTS *******/\nvar ee = new EventEmitter();\nee.setMaxListeners(50);\nexports.ee = ee;\n",
+			"file": "pixel_modules/core.js",
+			"file_size": 2390,
+			"file_write_time": 130446240315346314,
+			"settings":
+			{
+				"buffer_size": 2391,
 				"line_ending": "Unix"
 			}
 		},
@@ -187,7 +202,7 @@
 			"file": "pixel_modules/socket_api.js",
 			"settings":
 			{
-				"buffer_size": 570,
+				"buffer_size": 593,
 				"line_ending": "Unix"
 			}
 		}
@@ -219,6 +234,11 @@
 	},
 	"file_history":
 	[
+		"/home/mininao/Applications/Autoscan/AutoScan-Network-Linux-1.50.sh",
+		"/media/mininao/Fichiers/PROJETS/ESIEE-Files/2018/content/index.md",
+		"/media/mininao/Fichiers/PROJETS/ESIEE-Files/2018/content/TP/TP71.md",
+		"/media/mininao/Fichiers/PROJETS/ESIEE-Files/2018/content/TP/TP81.md",
+		"/media/mininao/Fichiers/Ecole/A3P/TPs/TP8-1/Carres.ctxt",
 		"/tmp/.fr-EUQHyt/icon_36382/license.txt",
 		"/home/mininao/nodejs/pixel2/test/soud2.html",
 		"/home/mininao/nodejs/pixel2/test/sound1.html",
@@ -291,7 +311,7 @@
 	"groups":
 	[
 		{
-			"selected": 2,
+			"selected": 4,
 			"sheets":
 			[
 				{
@@ -300,15 +320,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 975,
+						"buffer_size": 1096,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								974,
-								974
+								739,
+								739
 							]
 						],
 						"settings":
@@ -321,7 +341,7 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 6,
+					"stack_index": 7,
 					"type": "text"
 				},
 				{
@@ -350,7 +370,7 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 7,
+					"stack_index": 8,
 					"type": "text"
 				},
 				{
@@ -359,15 +379,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 1003,
+						"buffer_size": 1015,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								969,
-								969
+								1015,
+								1015
 							]
 						],
 						"settings":
@@ -379,7 +399,7 @@
 						"translation.y": 17.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 0,
+					"stack_index": 6,
 					"type": "text"
 				},
 				{
@@ -409,20 +429,49 @@
 					},
 					"stack_index": 5,
 					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "test/modif.html",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1345,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								712,
+								712
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 4,
+					"type": "text"
 				}
 			]
 		},
 		{
-			"selected": 3,
+			"selected": 0,
 			"sheets":
 			[
 				{
-					"buffer": 4,
+					"buffer": 5,
 					"file": "pixel_modules/core.js",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 2390,
+						"buffer_size": 2391,
 						"regions":
 						{
 						},
@@ -438,14 +487,14 @@
 							"syntax": "Packages/JavaScript/JavaScript.tmLanguage"
 						},
 						"translation.x": 0.0,
-						"translation.y": 918.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 3,
+					"stack_index": 0,
 					"type": "text"
 				},
 				{
-					"buffer": 5,
+					"buffer": 6,
 					"file": "pixel_modules/http_api.js",
 					"semi_transient": false,
 					"settings":
@@ -463,17 +512,18 @@
 						],
 						"settings":
 						{
-							"syntax": "Packages/JavaScript/JavaScript.tmLanguage"
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 2,
+					"stack_index": 1,
 					"type": "text"
 				},
 				{
-					"buffer": 6,
+					"buffer": 7,
 					"file": "pixel_modules/client.js",
 					"semi_transient": false,
 					"settings":
@@ -491,30 +541,31 @@
 						],
 						"settings":
 						{
-							"syntax": "Packages/JavaScript/JavaScript.tmLanguage"
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 4,
+					"stack_index": 2,
 					"type": "text"
 				},
 				{
-					"buffer": 7,
+					"buffer": 8,
 					"file": "pixel_modules/socket_api.js",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 570,
+						"buffer_size": 593,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								532,
-								532
+								593,
+								593
 							]
 						],
 						"settings":
@@ -525,7 +576,7 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 1,
+					"stack_index": 3,
 					"type": "text"
 				}
 			]
@@ -609,7 +660,7 @@
 	"show_minimap": true,
 	"show_open_files": true,
 	"show_tabs": true,
-	"side_bar_visible": false,
+	"side_bar_visible": true,
 	"side_bar_width": 150.0,
 	"status_bar_visible": true,
 	"template_settings":
