@@ -45,16 +45,22 @@ $body-font-family: "Lato", sans-serif;
 
   @import "appstyles";
 //base colors
-$primary: #1ABC9C;
+$primary: #1abc9c;
 $primary-lighter: #48C9B0;
+
+$2: #8e44ad;
+$3: #3498db;
+$4: #e74c3c;
+$4l: #e68078;
 
 $inverse: #34495E;
 $inverse-lighter: #415B76;
 $inverse-even-lighter: #4d719b;
 //other colors
 $page-bg: #e5e5e5;
+$boxes-bg: #fff;
+$boxes-inside : #bdc3c7;
 body {
-    border-top: 3px solid $primary;
     background-color: $page-bg;
     a {
         color: $primary;
@@ -64,13 +70,20 @@ body {
     }    
     
 }
-
+#border-top{
+    height: 3px;
+    width: 100%;
+    position: fixed;
+    background-color: $primary;
+}
 body > aside {
     height: 100%;
     width: 5rem;
     position: fixed;
     top: 3px;
     background-color: $inverse;
+    overflow-y: visible;
+    overflow-x: visible;
     .side_item {
         padding: 5px 0 6.5px 0;
         margin: 20px 0;
@@ -140,18 +153,102 @@ div#main {
             font-style: italic;
             font-size: 2rem;
         }        
-    }    
+    } 
+    
     .flexwrap {
-        padding-left: 5.6rem;
+        padding-left: 4.7rem;
         width: 100%;
         display: flex;
         flex-wrap: wrap;
         justify-content: space-around;
         .box {
             border: 1px solid black;
-            padding: 20px 30px;
+            padding: 0;
             max-width: 50rem;
-            margin: 20px 20px;
+            margin: 10px 10px;
+            border-radius: 4px;
+        }    ///// BOXES DESIGN ///////    
+        .count {
+            border: none;
+            overflow: hidden;
+            padding: 0;
+            min-width: 20rem;
+            background-color: blue;
+            
         }        
     }
+    
+    .row.boxes {
+        padding-left: 105px;
+        padding-right: 25px;
+        .boxwrap {
+            padding: 0 10px;
+            margin: 0;
+            margin-top: 10px;
+            margin-bottom: 10px;
+        }
+        .box {
+            background-color: $boxes-bg;
+            border-radius: 4px;
+        }
+        .box.counter {
+            padding: 0;
+            clear: both;
+            div {
+                display: block;
+            }
+            .number {
+                width: 40%;
+                margin: 0;
+                background-color: $2;
+                border-radius: 4px 0 0 4px;
+                float:left;
+                padding: 15px 0 15px 0;
+                text-align: center;
+                font-size: 4rem;
+                color: $boxes-bg;
+            }
+            .c1 {background-color: $primary;}
+            .c2 {background-color: $2;}
+            .c3 {background-color: $3;}
+            .c4 {background-color: $4;}
+            .desc {
+                width: 60%;
+                margin: 0;
+                background-color: $boxes-bg;
+                border-radius: 0 4px 4px 0;
+                float: right;
+                padding: 15px 0 15px 0;
+                text-align: center;
+                color: #b1b1b1;
+                em {
+                    font-size: 3rem;
+                    font-style: normal;
+                    font-weight: 300;
+                }
+            }            
+        }
+        .box.profile {
+            padding: 0;
+            background-color: $4;
+            min-height: 50px;
+            padding: 20px 0;
+            color: $boxes-bg;
+            text-align: center;
+            h2 {
+                color: $boxes-bg;
+            }
+            .picture {
+                height: 100px;
+                width: 100px;
+                border-radius: 50px;
+                margin: auto;
+                background-color: $4l;
+                text-align: center;
+                font-size: 90px;
+                
+            }
+        }        
+    }
+
 }
