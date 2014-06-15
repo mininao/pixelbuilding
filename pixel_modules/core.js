@@ -23,7 +23,7 @@ var register = function(x, y, name, color) {
   	};
   	_.defaults(newScreen, {name: "A screen", color: "red", x: 0, y: 0});
   	screens.push(newScreen);
-  	ee.emit('update',newScreen);
+  	ee.emit('create',newScreen);
   	return newScreen;
 }
 exports.register = register;
@@ -65,7 +65,7 @@ var set = function(id, Qx, Qy, name, color) {
     } else {
     	if (! _.isUndefined(Qx)) 	{currentScreen.x = x;}
     	if (! _.isUndefined(Qy)) 	{currentScreen.y = y;}
-    	if (! _.isUndefined(name)) 	{currentScreen.name = name;}
+    *	if (! _.isUndefined(name)) 	{currentScreen.name = name;}
     	if (! _.isUndefined(color)) {currentScreen.color = color;}
 		
 		ee.emit('update',currentScreen);
@@ -92,6 +92,9 @@ var setByCoords = function(x, y, name, color) {
 }
 exports.setByCoords = setByCoords;
 /* End of Setters */
+
+/* Stats & utilities */
+
 
 /****** UPDATES & EVENTS *******/
 var ee = new EventEmitter();

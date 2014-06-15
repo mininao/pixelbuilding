@@ -5341,3 +5341,21 @@ div#main {
         background-color: #e68078;
         text-align: center;
         font-size: 90px; }
+    div#main .row.boxes .box.about {
+      padding: 0;
+      background-color: #1abc9c;
+      min-height: 50px;
+      padding: 20px 0;
+      color: #fff;
+      text-align: center;
+      padding-left: 20px;
+      padding-right: 20px;
+      height: 247px; }
+      div#main .row.boxes .box.about h2 {
+        color: #fff;
+        margin-bottom: 20px; }
+      div#main .row.boxes .box.about img {
+        margin-bottom: 10px; }
+      div#main .row.boxes .box.about p a, div#main .row.boxes .box.about p a:visited, div#main .row.boxes .box.about p a:hover {
+        color: #fff;
+        text-decoration: underline; }

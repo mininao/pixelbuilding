@@ -1,0 +1,57 @@
+body > aside {
+    height: 100%;
+    width: 5rem;
+    position: fixed;
+    top: 3px;
+    background-color: $inverse;
+    overflow-y: visible;
+    overflow-x: visible;
+    .side_item {
+        padding: 5px 0 6.5px 0;
+        margin: 20px 0;
+        text-align: center;
+        color: #fff;
+        text-shadow: 0 0 0.35px #fff;
+        font-weight: 300;
+        font-size: 1rem;
+        text-transform: uppercase;
+        transition: color 0.25s linear 0s, background-color 0.25s linear 0s, box-shadow 0.25s linear 0s;
+        cursor: pointer;
+        i {
+            margin-bottom: 0.6rem;
+            font-size: 2rem;
+            line-height: 1;
+            text-shadow: none;
+        }
+        
+    }
+    .side_item:hover {
+        color: $primary;
+        text-shadow: 0 0 0.35px $primary;
+        -webkit-box-sizing: content-box;
+        -moz-box-sizing: content-box;
+        box-sizing: content-box;
+        background-color: $inverse-lighter;
+        -webkit-box-shadow: inset 0 0 5px rgba(52, 73, 94, 0.88);
+        box-shadow: inset 0 0 5px rgba(52, 73, 94, 0.88);
+    }
+    .side_item.active {
+        color: $primary;
+        text-shadow: 0 0 0.35px $primary;
+        background-color: $inverse-lighter;
+        -webkit-box-shadow: inset 0 0 5px rgba(52, 73, 94, 0.88);
+        box-shadow: inset 0 0 5px rgba(52, 73, 94, 0.88);
+    }
+    .side_item.active::after {
+        width: 4px;
+        height: 4.33rem;
+        position: absolute;
+        margin-top: -3.94rem;
+        margin-left: 2.5em;
+        background-color: $primary;
+        content: "";
+    }
+    .side_item.active:hover {
+        color: $primary-lighter;       
+    }    
+}
