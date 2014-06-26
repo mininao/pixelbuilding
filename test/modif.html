@@ -30,7 +30,7 @@
 		$(document).foundation();
 		var socket;
 		var establish_socket = function(){
-			socket = io.connect('http://localhost:1337');		
+			ocket = io.connect('http://' + window.location.host);		
 		}
 		var update = function(x, y, color){
 			socket.emit("api_coordinates_set", {x:x, y:y, color:color});

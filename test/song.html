@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<!--[if IE 9]><html class="lt-ie10" lang="en" > <![endif]-->
+<html class="no-js" lang="en" >
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Pixel tester page</title>
+
+	<link rel="stylesheet" href="css/normalize.css">
+	<link rel="stylesheet" href="css/foundation.css">
+
+	<!-- If you are using the gem version, you need this only -->
+	<link rel="stylesheet" href="css/app.css">
+
+	<script src="js/vendor/modernizr.js"></script>
+
+</head>
+<body>
+<textarea id="json"></textarea>
+<a id="launch" href="#">Launch song</a>
+
+	<script src="js/vendor/jquery.js"></script>
+	<script src="js/foundation.min.js"></script>
+	<script src="/socket.io/socket.io.js"></script>
+	<script>
+		//$(document).foundation();
+		var socket;
+		var establish_socket = function(){
+			socket = io.connect('http://' + window.location.host);		
+		}
+		var update = function(x, y, color){
+			socket.emit("api_coordinates_set", {x:x, y:y, color:color});
+		}
+		var taObject = function() {
+			return JSON.parse($("#json").val());
+		}		
+		$(function(){
+			establish_socket();
+			//update(1,1,"green");
+		});
+
+		$("#launch").click(function(){
+			$("audio").remove();
+			$("body").append('<audio src="' + taObject().path + '" preload controls></audio>');
+			socket.emit("music_play", {"playfrom":0, "song":taObject()});
+			$("audio").get(0).play();
+		});
+
+	</script>
+</body>
+</html>

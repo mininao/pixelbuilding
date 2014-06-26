@@ -4,6 +4,30 @@
 		"selected_items":
 		[
 			[
+				"clea",
+				"clearSongs"
+			],
+			[
+				"time",
+				"timeout	setTimeout function"
+			],
+			[
+				"change",
+				"changePixels"
+			],
+			[
+				"for",
+				"forEach"
+			],
+			[
+				"tim",
+				"timestamp"
+			],
+			[
+				"pay",
+				"playSong"
+			],
+			[
 				"socket",
 				"socket_api"
 			],
@@ -135,74 +159,7 @@
 			"file": "index.js",
 			"settings":
 			{
-				"buffer_size": 1096,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "test/index.html",
-			"settings":
-			{
-				"buffer_size": 2155,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "test/sound2.html",
-			"settings":
-			{
-				"buffer_size": 1015,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "views/connect.ejs",
-			"settings":
-			{
-				"buffer_size": 1084,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "test/modif.html",
-			"settings":
-			{
-				"buffer_size": 1345,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"contents": "/*\nPixelJS 2 Module - Core functions\nPixel storage, update events, get/set, register\nby mininao\nhttp://maxenceaici.fr\n*/\nvar _ = require(\"underscore\");\nvar EventEmitter = require('events').EventEmitter;\n\nvar screens = new Array();\n\n\n/**** REGISTER, GET, SET ******/\nvar register = function(x, y, name, color) {\n	x=parseInt(x);\n	y=parseInt(y);	\n	var newScreen = {\n	    x		: x,\n	    y		: y,\n	    name	: name,\n	    color	: color,\n	    id		: _.uniqueId('screen_')\n  	};\n  	_.defaults(newScreen, {name: \"A screen\", color: \"red\", x: 0, y: 0});\n  	screens.push(newScreen);\n  	ee.emit('update',newScreen);\n  	return newScreen;\n}\nexports.register = register;\n\nvar all = function() {\n	return screens;\n}\nexports.all = all;\n\nvar reset = function() {\n	screens.length = 0;\n	ee.emit('reset');\n	return screens;\n}\nexports.reset = reset;\n\n/* Getters */\nvar get = function(id) {\n  	return _.findWhere(screens, {id: id});\n}\nexports.get = get;\n\nvar getByCoords = function(x, y) {\n	x=parseInt(x);\n	y=parseInt(y);\n	var selectedScreens = _.where(screens, {x:x, y:y});\n	return selectedScreens;\n}\nexports.getByCoords = getByCoords;\n/* End of getters */\n\n/* Setters */\nvar set = function(id, Qx, Qy, name, color) {\n	x=parseInt(Qx);\n	y=parseInt(Qy);	\n	var currentScreen = _.findWhere(screens, {id: id});\n	if ( _.isUndefined(currentScreen) ) {\n        return; // Check if screen exists\n    } else {\n    	if (! _.isUndefined(Qx)) 	{currentScreen.x = x;}\n    	if (! _.isUndefined(Qy)) 	{currentScreen.y = y;}\n    *	if (! _.isUndefined(name)) 	{currentScreen.name = name;}\n    	if (! _.isUndefined(color)) {currentScreen.color = color;}\n		\n		ee.emit('update',currentScreen);\n		return currentScreen;\n  	}\n}\nexports.set = set;\n\nvar setByCoords = function(x, y, name, color) {\n	x=parseInt(x);\n	y=parseInt(y);	\n	var selectedScreens = _.where(screens, {x:x, y:y});\n	if ( _.isEmpty(selectedScreens) ) {\n		console.log(\"setByCoords : Coords not found\");\n        return; // Check if screen exists\n    } else {\n    	_.each(selectedScreens, function(currentScreen){\n	    	if (! _.isUndefined(name)) 	{currentScreen.name = name;}\n	    	if (! _.isUndefined(color)) {currentScreen.color = color;}\n			ee.emit('update',currentScreen);\n    	});\n    }\n		return selectedScreens;\n}\nexports.setByCoords = setByCoords;\n/* End of Setters */\n\n/****** UPDATES & EVENTS *******/\nvar ee = new EventEmitter();\nee.setMaxListeners(50);\nexports.ee = ee;\n",
-			"file": "pixel_modules/core.js",
-			"file_size": 2390,
-			"file_write_time": 130446240315346314,
-			"settings":
-			{
-				"buffer_size": 2391,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "pixel_modules/http_api.js",
-			"settings":
-			{
-				"buffer_size": 1831,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "pixel_modules/client.js",
-			"settings":
-			{
-				"buffer_size": 895,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "pixel_modules/socket_api.js",
-			"settings":
-			{
-				"buffer_size": 593,
+				"buffer_size": 1304,
 				"line_ending": "Unix"
 			}
 		}
@@ -234,6 +191,22 @@
 	},
 	"file_history":
 	[
+		"/home/mininao/node_dev/pixel2/pixel_modules/core.js",
+		"/home/mininao/node_dev/pixel2/pixel_modules/lib.js",
+		"/home/mininao/node_dev/pixel2/pixel_modules/music.js",
+		"/home/mininao/node_dev/pixel2/pixel_modules/socket_api.js",
+		"/home/mininao/node_dev/pixel2/pixel_modules/client.js",
+		"/home/mininao/node_dev/pixel2/pixel_modules/http_api.js",
+		"/home/mininao/node_dev/pixel2/package.json",
+		"/home/mininao/node_dev/pixel2/test/index.html",
+		"/home/mininao/node_dev/pixel2/test/modif.html",
+		"/home/mininao/node_dev/pixel2/test/song.html",
+		"/home/mininao/node_dev/pixel2/pixel_modules/lib/pixelbuilding.js",
+		"/home/mininao/node_dev/pixel2/pixel_modules/music/df5o.json",
+		"/home/mininao/node_dev/pixel2/pixel_modules/music/testmusic.json",
+		"/home/mininao/node_dev/pixel2/pixel_modules/music/df5.json",
+		"/home/mininao/node_dev/pixel2/test/sound2.html",
+		"/home/mininao/node_dev/pixel2/views/connect.ejs",
 		"/home/mininao/Applications/Autoscan/AutoScan-Network-Linux-1.50.sh",
 		"/media/mininao/Fichiers/PROJETS/ESIEE-Files/2018/content/index.md",
 		"/media/mininao/Fichiers/PROJETS/ESIEE-Files/2018/content/TP/TP71.md",
@@ -286,6 +259,9 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"coucou",
+			"		\n",
+			"Error",
 			"ccc",
 			"x",
 			"where",
@@ -311,7 +287,7 @@
 	"groups":
 	[
 		{
-			"selected": 4,
+			"selected": 0,
 			"sheets":
 			[
 				{
@@ -320,15 +296,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 1096,
+						"buffer_size": 1304,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								739,
-								739
+								337,
+								337
 							]
 						],
 						"settings":
@@ -341,244 +317,14 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 7,
-					"type": "text"
-				},
-				{
-					"buffer": 1,
-					"file": "test/index.html",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 2155,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								9,
-								9
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/HTML/HTML.tmLanguage",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 8,
-					"type": "text"
-				},
-				{
-					"buffer": 2,
-					"file": "test/sound2.html",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 1015,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								1015,
-								1015
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/HTML/HTML.tmLanguage",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 17.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 6,
-					"type": "text"
-				},
-				{
-					"buffer": 3,
-					"file": "views/connect.ejs",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 1084,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								556,
-								556
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/HTML/HTML.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 5,
-					"type": "text"
-				},
-				{
-					"buffer": 4,
-					"file": "test/modif.html",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 1345,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								712,
-								712
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/HTML/HTML.tmLanguage",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 4,
+					"stack_index": 0,
 					"type": "text"
 				}
 			]
 		},
 		{
-			"selected": 0,
 			"sheets":
 			[
-				{
-					"buffer": 5,
-					"file": "pixel_modules/core.js",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 2391,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								266,
-								266
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/JavaScript/JavaScript.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 0,
-					"type": "text"
-				},
-				{
-					"buffer": 6,
-					"file": "pixel_modules/http_api.js",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 1831,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								0,
-								0
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 1,
-					"type": "text"
-				},
-				{
-					"buffer": 7,
-					"file": "pixel_modules/client.js",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 895,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								108,
-								108
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 2,
-					"type": "text"
-				},
-				{
-					"buffer": 8,
-					"file": "pixel_modules/socket_api.js",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 593,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								593,
-								593
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/JavaScript/JavaScript.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 3,
-					"type": "text"
-				}
 			]
 		}
 	],
@@ -610,7 +356,7 @@
 		"cols":
 		[
 			0.0,
-			0.5,
+			0.938271604938,
 			1.0
 		],
 		"rows":

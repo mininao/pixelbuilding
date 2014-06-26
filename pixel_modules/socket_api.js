@@ -14,7 +14,6 @@ var init = function(app, core, io) {
 		});	
 		socket.on('api_coordinates_set', function (msg) {
 	    	socket.emit(core.setByCoords(msg.x,msg.y,msg.name,msg.color));
-	    	console.log('yo');
 		});			
 	});	
 }

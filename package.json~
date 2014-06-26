@@ -1,0 +1,12 @@
+{
+  "name": "PixelBuilding",
+  "description": "Use building rooms as pixels",
+  "version": "2",
+  "dependencies": {
+    "ejs": "^1.0.0",
+    "express": "4.1.x",
+    "socket.io": "0.9.x",
+    "underscore": "^1.6.0"
+  },
+  "license": "MIT"
+}

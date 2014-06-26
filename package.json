@@ -1,11 +1,16 @@
 {
-  "name": "PixelJS",
-  "description": "Pixels",
-  "version": "2.0.1",
+  "name": "PixelBuilding",
+  "description": "Use building rooms as pixels",
+  "author": "Maxence Aïci - Mininao <hi@maxenceaici.fr>",
+  "version": "2.0.0",
   "dependencies": {
     "ejs": "^1.0.0",
-    "express": "*",
-    "socket.io": "*",
+    "express": "4.1.x",
+    "socket.io": "0.9.x",
     "underscore": "^1.6.0"
+  },
+  "license": "MIT",
+  "script": {
+    "start": "echo ho"
   }
 }

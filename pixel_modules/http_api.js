@@ -16,7 +16,7 @@ var init = function(app, core) {
 	app.get('/pixel/http_api/screen/:screen', function(req, res){
 	  var currentScreen = core.get(req.params.screen);
 	  if(_.isUndefined(currentScreen)) {
-	  	res.status(404).send("screen not found");
+	  	res.status(404).send("Screen not found");
 	  } else {
 	  	res.jsonp(currentScreen);
 	  }

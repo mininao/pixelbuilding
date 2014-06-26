@@ -5241,6 +5241,14 @@ body > aside {
     margin-left: 2.5em;
     background-color: #1abc9c;
     content: ""; }
+  body > aside .side_item.active.nobar::after {
+    width: 0px;
+    height: 4.33rem;
+    position: absolute;
+    margin-top: -3.94rem;
+    margin-left: 2.5em;
+    background-color: #1abc9c;
+    content: ""; }
   body > aside .side_item.active:hover {
     color: #48C9B0; }
 
@@ -5359,3 +5367,109 @@ div#main {
       div#main .row.boxes .box.about p a, div#main .row.boxes .box.about p a:visited, div#main .row.boxes .box.about p a:hover {
         color: #fff;
         text-decoration: underline; }
+
+.music div#main .box.launch {
+  padding: 0;
+  background-color: #1abc9c;
+  min-height: 50px;
+  padding: 20px 0;
+  color: #fff;
+  text-align: center;
+  padding-left: 20px;
+  padding-right: 20px;
+  height: 247px; }
+  .music div#main .box.launch h2 {
+    color: #fff;
+    margin-bottom: 20px; }
+  .music div#main .box.launch img {
+    margin-bottom: 10px; }
+  .music div#main .box.launch p a, .music div#main .box.launch p a:visited, .music div#main .box.launch p a:hover {
+    color: #fff;
+    text-decoration: underline; }
+  .music div#main .box.launch a.launch {
+    color: #1abc9c;
+    background-color: #fff;
+    padding: 20px;
+    margin-top: 30px;
+    display: block;
+    width: 20%;
+    margin-right: auto;
+    margin-left: auto;
+    border-radius: 4px;
+    font-weight: 700;
+    font-size: 1.5em; }
+.music div#main .box.select {
+  padding: 0;
+  background-color: #e74c3c;
+  min-height: 50px;
+  padding: 20px 0;
+  color: #fff;
+  text-align: center;
+  padding-left: 20px;
+  padding-right: 20px;
+  height: 247px; }
+  .music div#main .box.select h2 {
+    color: #fff;
+    margin-bottom: 20px; }
+  .music div#main .box.select img {
+    margin-bottom: 10px; }
+  .music div#main .box.select p a, .music div#main .box.select p a:visited, .music div#main .box.select p a:hover {
+    color: #fff;
+    text-decoration: underline; }
+  .music div#main .box.select select {
+    width: 25%;
+    margin-right: auto;
+    margin-left: auto; }
+
+.manual div#main .box.launch {
+  padding: 0;
+  background-color: #1abc9c;
+  min-height: 50px;
+  padding: 20px 0;
+  color: #fff;
+  text-align: center;
+  padding-left: 20px;
+  padding-right: 20px;
+  height: 247px; }
+  .manual div#main .box.launch h2 {
+    color: #fff;
+    margin-bottom: 20px; }
+  .manual div#main .box.launch img {
+    margin-bottom: 10px; }
+  .manual div#main .box.launch p a, .manual div#main .box.launch p a:visited, .manual div#main .box.launch p a:hover {
+    color: #fff;
+    text-decoration: underline; }
+  .manual div#main .box.launch a.launch {
+    color: #1abc9c;
+    background-color: #fff;
+    padding: 20px;
+    margin-top: 30px;
+    display: block;
+    width: 20%;
+    margin-right: auto;
+    margin-left: auto;
+    border-radius: 4px;
+    font-weight: 700;
+    font-size: 1.5em; }
+.manual div#main .box.select {
+  padding: 0;
+  background-color: #e74c3c;
+  min-height: 50px;
+  padding: 20px 0;
+  color: #fff;
+  text-align: center;
+  padding-left: 20px;
+  padding-right: 20px;
+  height: 247px; }
+  .manual div#main .box.select h2 {
+    color: #fff;
+    margin-bottom: 20px; }
+  .manual div#main .box.select img {
+    margin-bottom: 10px; }
+  .manual div#main .box.select p a, .manual div#main .box.select p a:visited, .manual div#main .box.select p a:hover {
+    color: #fff;
+    text-decoration: underline; }
+  .manual div#main .box.select input {
+    width: 25%;
+    margin-right: auto;
+    margin-left: auto; }

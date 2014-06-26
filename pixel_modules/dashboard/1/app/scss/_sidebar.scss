@@ -42,6 +42,9 @@ body > aside {
         -webkit-box-shadow: inset 0 0 5px rgba(52, 73, 94, 0.88);
         box-shadow: inset 0 0 5px rgba(52, 73, 94, 0.88);
     }
+    .side_item.nobar {    
+        
+    }
     .side_item.active::after {
         width: 4px;
         height: 4.33rem;
@@ -51,6 +54,15 @@ body > aside {
         background-color: $primary;
         content: "";
     }
+    .side_item.active.nobar::after {
+        width: 0px;
+        height: 4.33rem;
+        position: absolute;
+        margin-top: -3.94rem;
+        margin-left: 2.5em;
+        background-color: $primary;
+        content: "";
+    }    
     .side_item.active:hover {
         color: $primary-lighter;       
     }    

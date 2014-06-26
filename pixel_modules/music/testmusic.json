@@ -1,0 +1,29 @@
+{
+	"path":"sound/df5.ogg",
+	"updates": [
+		{
+			"timestamp": 0,
+			"pixels": [
+				 {"x":4,"y":4,"color":"rgb(50,50,250)"}
+			]
+		},
+		{
+			"timestamp": 500,
+			"pixels": [
+				 {"x":3,"y":4,"color":"rgb(50,50,250)"}
+			]
+		},
+		{
+			"timestamp": 1000,
+			"pixels": [
+				 {"x":2,"y":4,"color":"rgb(50,50,250)"}
+			]
+		},
+		{
+			"timestamp": 1500,
+			"pixels": [
+				 {"x":1,"y":4,"color":"rgb(50,50,250)"}
+			]
+		}					
+	]
+}

@@ -219,3 +219,132 @@ div#main {
     }
 
 }
+
+.music div#main{
+    .box.launch {
+        padding: 0;
+        background-color: $primary;
+        min-height: 50px;
+        padding: 20px 0;
+        color: $boxes-bg;
+        text-align: center;
+        padding-left: 20px;
+        padding-right: 20px;
+        height: 247px;
+        h2 {
+            color: $boxes-bg;
+            margin-bottom: 20px;
+        }
+        img {
+            margin-bottom: 10px;
+        }
+        p a, p a:visited, p a:hover {
+            color: $boxes-bg;
+            text-decoration: underline;
+        }
+        a.launch {
+            color: $primary;
+            background-color: $boxes-bg;
+            padding: 20px;
+            margin-top: 30px;
+            display: block;
+            width: 20%;
+            margin-right: auto;
+            margin-left: auto;
+            border-radius: 4px;
+            font-weight: 700;
+            font-size: 1.5em;
+        }
+    }
+    .box.select {
+        padding: 0;
+        background-color: $4;
+        min-height: 50px;
+        padding: 20px 0;
+        color: $boxes-bg;
+        text-align: center;
+        padding-left: 20px;
+        padding-right: 20px;
+        height: 247px;
+        h2 {
+            color: $boxes-bg;
+            margin-bottom: 20px;
+        }
+        img {
+            margin-bottom: 10px;
+        }
+        p a, p a:visited, p a:hover {
+            color: $boxes-bg;
+            text-decoration: underline;
+        }
+        select {
+            width: 25%;
+            margin-right: auto;
+            margin-left: auto;
+        }
+    }    
+}
+.manual div#main{
+    .box.launch {
+        padding: 0;
+        background-color: $primary;
+        min-height: 50px;
+        padding: 20px 0;
+        color: $boxes-bg;
+        text-align: center;
+        padding-left: 20px;
+        padding-right: 20px;
+        height: 247px;
+        h2 {
+            color: $boxes-bg;
+            margin-bottom: 20px;
+        }
+        img {
+            margin-bottom: 10px;
+        }
+        p a, p a:visited, p a:hover {
+            color: $boxes-bg;
+            text-decoration: underline;
+        }
+        a.launch {
+            color: $primary;
+            background-color: $boxes-bg;
+            padding: 20px;
+            margin-top: 30px;
+            display: block;
+            width: 20%;
+            margin-right: auto;
+            margin-left: auto;
+            border-radius: 4px;
+            font-weight: 700;
+            font-size: 1.5em;
+        }
+    }
+    .box.select {
+        padding: 0;
+        background-color: $4;
+        min-height: 50px;
+        padding: 20px 0;
+        color: $boxes-bg;
+        text-align: center;
+        padding-left: 20px;
+        padding-right: 20px;
+        height: 247px;
+        h2 {
+            color: $boxes-bg;
+            margin-bottom: 20px;
+        }
+        img {
+            margin-bottom: 10px;
+        }
+        p a, p a:visited, p a:hover {
+            color: $boxes-bg;
+            text-decoration: underline;
+        }
+        input {
+            width: 25%;
+            margin-right: auto;
+            margin-left: auto;
+        }
+    }    
+}

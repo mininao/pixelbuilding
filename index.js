@@ -30,9 +30,13 @@ client.init(app, core, io);
 var socket_api = require('./pixel_modules/socket_api.js');
 socket_api.init(app, core, io);
 
-/* 2.1 Module: http_api */
+/* 2.4 Module: music */
 var music = require('./pixel_modules/music.js');
 music.init(app, core, io);
+
+/* 2.4 Module: lib */
+var lib = require('./pixel_modules/lib.js');
+lib.init(app,express);
 
 /* 3. Tests */
 
