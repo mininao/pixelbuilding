@@ -9,7 +9,6 @@
     <link rel="stylesheet" href="stylesheets/pygment_trac.css">
     <script src="javascripts/scale.fix.js"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
-
     <!--[if lt IE 9]>
     <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
@@ -17,14 +16,18 @@
   <body>
     <div class="wrapper">
       <header>
-        <h1>Pixelbuilding</h1>
-        <p>Pixel grid on a building</p>
-        <p class="view"><a href="https://github.com/mininao/pixelbuilding">View the Project on GitHub <small>mininao/pixelbuilding</small></a></p>
+        <h1 class="header">Pixelbuilding</h1>
+        <p class="header">Pixel grid on a building</p>
+
         <ul>
-          <li><a href="https://github.com/mininao/pixelbuilding/zipball/master">Download <strong>ZIP File</strong></a></li>
-          <li><a href="https://github.com/mininao/pixelbuilding/tarball/master">Download <strong>TAR Ball</strong></a></li>
-          <li><a href="https://github.com/mininao/pixelbuilding">View On <strong>GitHub</strong></a></li>
+          <li class="download"><a class="buttons" href="https://github.com/mininao/pixelbuilding/zipball/master">Download ZIP</a></li>
+          <li class="download"><a class="buttons" href="https://github.com/mininao/pixelbuilding/tarball/master">Download TAR</a></li>
+          <li><a class="buttons github" href="https://github.com/mininao/pixelbuilding">View On GitHub</a></li>
         </ul>
+
+        <p class="header">This project is maintained by <a class="header name" href="https://github.com/mininao">mininao</a></p>
+
+
       </header>
       <section>
         <h1>
@@ -40,14 +43,62 @@ Sommaire :  </p>
 <li>Fonctionnalités</li>
 <li>Évolutions futures<br>
 </li>
-</ol>
+</ol><p>Vous pouvez aussi voir les slides de mon oral ici : <a href="http://slides.com/aicimaxence/pixel-building/embed">http://slides.com/aicimaxence/pixel-building/embed</a></p>
+
+<h2>
+<a name="pr%C3%A9sentation-du-projet" class="anchor" href="#pr%C3%A9sentation-du-projet"><span class="octicon octicon-link"></span></a>Présentation du projet</h2>
+
+<p>L'idée de départ de ce projet est d'utiliser les salles de classes d'un épi en tant que pixels d'un écran.<br>
+Pour cela, la solution la plus simple était d'utiliser les vidéo projecteurs déjà présents dans les salles, et de les tourner vers le mur opposé à la fenêtre.<br>
+Côté logiciel, le plus simple était là encore d'utiliser un navigateur web dans chaque salle, nous permettant ainsi de nous passer de client lourd.</p>
+
+<h2>
+<a name="d%C3%A9monstration" class="anchor" href="#d%C3%A9monstration"><span class="octicon octicon-link"></span></a>Démonstration</h2>
+
+<p>Pour tester, le projet, vous pouvez vous rendre à l'adresse communiquée.
+l'url <code>/pixel/test</code> permet de simuler le comportement des pixels (via des iframes)
+l'url <code>/pixel/dashboard</code> vous donne accès au panneau de contrôle</p>
+
+<p>Notez que cette version est (très) lente, puisqu'il s'agit en réalité d'un VPN vers un serveur pour utilisation locale à l'ESIEE</p>
+
+<h2>
+<a name="fonctionnalit%C3%A9s" class="anchor" href="#fonctionnalit%C3%A9s"><span class="octicon octicon-link"></span></a>Fonctionnalités</h2>
+
+<h3>
+<a name="gestion-dun-tableau-de-pixels" class="anchor" href="#gestion-dun-tableau-de-pixels"><span class="octicon octicon-link"></span></a>Gestion d'un tableau de pixels</h3>
+
+<p>Chaque "pixel" possède un identifiant unique, des coordonnées, une couleur et un nom d'affichage.
+Le stockage, l'accès et la modification des pixels sont gérés par le module <code>core.js</code></p>
+
+<h3>
+<a name="api-http" class="anchor" href="#api-http"><span class="octicon octicon-link"></span></a>API HTTP</h3>
+
+<p>PixelBuilding fournit des API simples en HTTP (gérées par <code>http_api.js</code>)
+Vous pouvez par exemple essayer les requêtes suivantes :</p>
+
+<ul>
+<li>GET /pixel/http_api/screens <em>Pour obtenir une liste json de tous les pixels</em>
+</li>
+<li>GET /pixel/http_api/coordinates/X/Y <em>Pour obtenir les informations d'un pixel particulier</em>
+</li>
+<li>POST /pixel/http_api/coordinates/X/Y?color=green <em>Pour changer la couleur d'un pixel</em>
+</li>
+</ul><h3>
+<a name="temps-r%C3%A9%C3%A9l-avec-les-websockets" class="anchor" href="#temps-r%C3%A9%C3%A9l-avec-les-websockets"><span class="octicon octicon-link"></span></a>Temps Réél avec les websockets</h3>
+
+<p>Pour accélérer la transmission des changements de couleur aux pixels, j'utilise la librairie <a href="http://socket.io/">socket.io</a> qui permet une communication bilatérale client-serveur, et par conséquent de s'affranchir de la structure Requête-Réponse.</p>
+
+<h3>
+<a name="dashboard-simple-et-%C3%A9l%C3%A9gant" class="anchor" href="#dashboard-simple-et-%C3%A9l%C3%A9gant"><span class="octicon octicon-link"></span></a>Dashboard simple et élégant</h3>
+
+<p>Afin de permettre à l'utilisateur final d'utiliser PixelBuilding simplement, il a été nécessaire de créer un panneau de contrôle adapté. Celui-ci est conçu à l'aide de la partie "grille" du framework foundation et en scss
+Ce panneau est toujours en construction et certaines de ses fonctionnalités ne sont pas disponibles</p>
       </section>
+      <footer>
+        <p><small>Hosted on <a href="http://pages.github.com">GitHub Pages</a> using the Dinky theme</small></p>
+      </footer>
     </div>
-    <footer>
-      <p>Project maintained by <a href="https://github.com/mininao">mininao</a></p>
-      <p>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></p>
-    </footer>
     <!--[if !IE]><script>fixScale(document);</script><![endif]-->
-    
+		
   </body>
 </html>
